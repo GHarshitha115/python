@@ -8,3 +8,11 @@ for i in dict1:
         #print(m)
         print(i*m,end="")
         n=n%dict1[i]
+  
+  
+  
+  sample o/p:
+ 1990
+ MCMXC
+ 
+ 
