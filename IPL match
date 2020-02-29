@@ -1,0 +1,79 @@
+x=int(input())
+d={}
+for i in range(x):
+    a,b,c=input().split(";")
+    if a not in d:
+        d[a]=[c]
+    else:
+        d[a].append(c)
+    if b not in d:
+        if c=='win':
+            d[b]=['loss']
+        elif c=='loss':
+            d[b]=['win']
+        elif c=='draw':
+            d[b]=['draw']
+    else:
+        if c=='win':
+            d[b].append('loss')
+        elif c=='loss':
+            d[b].append('win')
+        elif c=='draw':
+            d[b].append(c)
+        
+#print(d)
+points=[]
+m_p=[]
+win=[]
+draw=[]
+loss=[]
+team=[]
+for i,j in d.items():
+    m=0
+    c=0
+    h=0
+    g=0
+    l1=0
+    team.append(i)
+    for k in j:
+        #print(k)
+        c+=1
+        if k == 'win':
+            m +=3
+            h+=1
+        elif k == 'draw':
+            m +=1
+            g+=1
+        elif k=='loss':
+            l1+=1
+    
+    points.append(m)
+    m_p.append(c)
+    draw.append(g)
+    win.append(h)
+    loss.append(l1)
+b=[]
+c=[]
+dict1={}
+for i in range(len(team)):
+    if team[i] not in dict1:
+       b.append(team[i])
+       c.append(m_p[i])
+       c.append(win[i])
+       c.append(draw[i])
+       c.append(loss[i])
+       c.append(points[i])
+dict1={}
+e=[]
+count=0;
+for i in range(len(b)):
+    e=[]
+    for j in range(5):
+        e.append(c[count])
+        count+=1
+    dict1.update({team[i]:e})
+dict2=sorted(dict1.items())
+dict3=sorted(dict2,key=lambda x:x[1][4],reverse=True)
+print("{:<24}".format("Team")+'| '+"{:>2}".format("MP")+' | '+"{:>2}".format("W")+' | '+"{:>2}".format("D")+' | '+"{:>2}".format("L")+' | '+"{:>2}".format("P")+" |")
+for i in range(len(dict3)):
+    print("{:<24}".format(dict3[i][0])+'| '+"{:>2}".format(dict3[i][1][0])+' | '+"{:>2}".format(dict3[i][1][1])+' | '+"{:>2}".format(dict3[i][1][2])+' | '+"{:>2}".forma
