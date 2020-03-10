@@ -1,0 +1,16 @@
+import datetime
+def  convert(date_time):
+    format='%b %d %Y %I:%M%p'
+    date_time_str=datetime.datetime.strptime(date_time,format)
+    return date_time_str
+    
+    
+date_time=input()
+print(convert(date_time),end='')
+
+
+input:
+jun 11 2014 2:43PM
+
+o/p:
+2014-07-01 14:43:00
