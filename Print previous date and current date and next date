@@ -1,0 +1,8 @@
+import datetime 
+x=input()
+d=datetime.datetime.strptime(x,'%b %d %Y')
+d1=d.date()
+tdelta=datetime.timedelta(days=1)
+print(d1-tdelta)
+print(d1)
+print(d1+tdelta,end='')
