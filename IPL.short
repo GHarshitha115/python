@@ -31,14 +31,55 @@ print("{:<24}".format("Team")+'| '+"{:>2}".format("MP")+' | '+"{:>2}".format("W"
 for k,v in dictionary_3:
     print("{:<24}".format(k)+'| '+"{:>2}".format(v['mp'])+' | '+"{:>2}".format(v['w'])+' | '+"{:>2}".format(v['d'])+' | '+"{:>2}".format(v['l'])+' | '+"{:>2}".format(v['p'])+" |")
         
-
-
-
-
-
-
-
-
         
-             
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  
+  
+  
+ '''import json
+n=int(input())#input reading
+dictionary_1={}
+for i in range(n):
+    t1,t2,r=input().split(";")
+    if t1 not in dictionary_1:
+        dictionary_1.update({t1:{'mp':0,'w':0,'d':0,'l':0,'p':0}})
+    if t2 not in dictionary_1:
+        dictionary_1.update({t2:{'mp':0,'w':0,'d':0,'l':0,'p':0}})
+    if r=='win':
+        dictionary_1[t1]['mp']+=1
+        dictionary_1[t2]['mp']+=1
+        dictionary_1[t1]['w']+=1
+        dictionary_1[t2]['l']+=1
+        dictionary_1[t1]['p']+=3
+    if r=='loss':
+        dictionary_1[t1]['mp']+=1
+        dictionary_1[t2]['mp']+=1
+        dictionary_1[t2]['w']+=1
+        dictionary_1[t1]['l']+=1
+        dictionary_1[t2]['p']+=3
+    if r=='draw':
+        dictionary_1[t1]['mp']+=1
+        dictionary_1[t2]['mp']+=1
+        dictionary_1[t1]['d']+=1
+        dictionary_1[t2]['d']+=1
+        dictionary_1[t1]['p']+=1
+        dictionary_1[t2]['p']+=1
+print(dictionary_1)
+dictionary_2=sorted(dictionary_1.items())
+dictionary_3=sorted(dictionary_2,key=lambda x:x[1]['p'],reverse=True)
+print("{:<24}".format("Team")+'| '+"{:>2}".format("MP")+' | '+"{:>2}".format("W")+' | '+"{:>2}".format("D")+' | '+"{:>2}".format("L")+' | '+"{:>2}".format("P")+" |")
+for k,v in dictionary_3:
+    print("{:<24}".format(k)+'| '+"{:>2}".format(v['mp'])+' | '+"{:>2}".format(v['w'])+' | '+"{:>2}".format(v['d'])+' | '+"{:>2}".format(v['l'])+' | '+"{:>2}".format(v['p'])+" |")
+d=json.dumps(dictionary_3,indent=2)
+print(d)'''
