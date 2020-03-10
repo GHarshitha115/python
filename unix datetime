@@ -1,0 +1,9 @@
+input=1284105682
+
+
+import datetime
+n=input()
+d1=datetime.datetime.fromtimestamp(int(n))
+hour=d1+datetime.timedelta(hours=5)
+minutes=hour+datetime.timedelta(minutes=30)
+print(minutes,end='')
