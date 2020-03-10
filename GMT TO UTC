@@ -1,0 +1,12 @@
+import datetime
+x=input()
+f1=datetime.datetime.strptime(x,'%a %d %b %Y %H:%M:%S')
+f2=f1+datetime.timedelta(hours=5,minutes=30)
+f3=datetime.datetime.strftime(f2,'%a %d %b %Y %H:%M:%S')
+print(f3,end='')
+
+
+
+INPUT:SUN O5 JAN 2020 13:54:30
+
+OUTPUT:SUN O5 JAN 2020 19:24:30
