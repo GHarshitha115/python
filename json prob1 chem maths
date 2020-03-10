@@ -1,0 +1,18 @@
+input:
+3
+maths,MA101
+physics,PA101
+chemistry,CH101
+
+
+
+import json
+n=int(input())
+list1={}
+for i in range(n):
+    sub,ids=input().split(',')
+    list1.update({sub:ids})
+list2=dict(sorted(list1.items(),key=lambda x:x[0],reverse=False))
+#print(list2)
+d=json.dumps(list2)
+print(d)
