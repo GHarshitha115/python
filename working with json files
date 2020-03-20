@@ -1,0 +1,12 @@
+import json
+with open('harshita/l.json') as f:
+    l=json.load(f)
+
+for i in range(len(l)):
+    ext=l[i]['e']
+    l[i]['file_name']='main{}'.format(ext)
+    print(ext)
+
+with open('harshita/l.json','w') as f:
+    json.dump(l,f,indent=10)
+        
