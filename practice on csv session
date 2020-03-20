@@ -1,0 +1,21 @@
+#csv files
+
+import csv
+with open('harshita/marks.csv') as f:
+    reader=csv.DictReader(f)
+    marks=[dict(row) for row in reader]
+    
+#print(marks)
+for user_score in marks:
+    if float(user_score['score'])>=30:
+        user_score['Grade']='P'
+    else:
+        user_score['Grade']='F'
+    user_score.pop('score')
+with open('harshita/grades.csv','w') as f:
+    fieldnames=['Name','Subject','Grade']
+    writer=csv.DictWriter(f,fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(marks)
+
+#print(dict(writer))
